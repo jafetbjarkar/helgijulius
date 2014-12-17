@@ -11,9 +11,12 @@
 	
 
 	<?php wp_footer(); ?>
+	
 
 	<!-- enable ACF -->
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/min/advanced-custom-fields-min.js"></script>
+	<!-- OWL Carousel slider -->
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/min/owl.carousel.min.js"></script>
 	<!-- Tooltipster -->
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/min/jquery.tooltipster.min.js"></script>
 	<!-- Extra scripts -->
