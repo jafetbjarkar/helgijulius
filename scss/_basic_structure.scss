@@ -1,0 +1,55 @@
+/**
+ * Basic structure
+ * ----------------------------------------------------------------------------
+ */
+
+.outer-frame {
+	position: fixed;
+	top: 0; left: 0;
+	border: 10px solid black;
+	height: 100vh; width: 100vw;
+	opacity: .15;
+	z-index: -1;
+}
+
+.inner-frame {
+	position: fixed;
+	top: 0; left: 0;
+	border: 1px solid;
+	height: calc(100vh - 20px); width: calc(100vw - 20px);
+	margin: 10px;
+	opacity: .6;
+	z-index: -1;
+	&:after {
+		position: absolute;
+		bottom: -8px; right: 0;
+	}
+}
+
+/* Black or white */
+// Options controlled with jQuery. Values set in WP back-end
+.inner-frame.white {
+	&:before {
+		content: url(img/corner-white.png) top left no-repeat;
+	}
+	&:after {
+		content: url(img/corner-white2.png) top left no-repeat;
+	}
+}
+.inner-frame.black {
+	&:before {
+		content: url(img/corner-black.png) top left no-repeat;
+	}
+	&:after {
+		content: url(img/corner-black2.png) top left no-repeat;
+	}
+}
+
+.white {
+	color: white;
+	border-color: white;
+}
+.black {
+	color: #333;
+	border-color: black;
+}
