@@ -1,0 +1,1 @@
+jQuery(function($){$("#content").owlCarousel({navigation:!0,slideSpeed:300,paginationSpeed:400,singleItem:!0,lazyLoad:!0})});

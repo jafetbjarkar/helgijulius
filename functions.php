@@ -42,11 +42,6 @@ function twentythirteen_setup() {
 	 */
 	load_theme_textdomain( 'twentythirteen', get_template_directory() . '/languages' );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', twentythirteen_fonts_url() ) );
 
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
@@ -145,13 +140,10 @@ function twentythirteen_scripts_styles() {
 		wp_enqueue_script( 'jquery-masonry' );
 
 	// Loads JavaScript file with functionality specific to Twenty Thirteen.
-	wp_enqueue_script( 'twentythirteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-06-08', true );
+	wp_enqueue_script( 'helgijulius-script', get_template_directory_uri() . '/js/extra.js', array( 'jquery' ), '2014-06-08', true );
 
 	// Add Source Sans Pro and Bitter fonts, used in the main stylesheet.
 	wp_enqueue_style( 'twentythirteen-fonts', twentythirteen_fonts_url(), array(), null );
-
-	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.03' );
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'twentythirteen-style', get_stylesheet_uri(), array(), '2013-07-18' );
