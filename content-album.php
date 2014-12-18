@@ -15,6 +15,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php the_field('playlist'); ?>
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
