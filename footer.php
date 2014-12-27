@@ -20,7 +20,7 @@
 	<!-- Tooltipster -->
 	<!--<script src="<?php //echo //get_stylesheet_directory_uri(); ?>/js/min/jquery.tooltipster.min.js"></script>-->
 	<!-- Extra scripts -->
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/min/extra-min.js"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/extra.js"></script>
 	
 </body>
 </html>

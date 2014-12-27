@@ -3,53 +3,75 @@
  * ----------------------------------------------------------------------------
  */
 
+/* Admin bar */
+#wpadminbar {
+	display: none;
+}
+body.logged-in {
+	margin-top: -32px;
+}
+
 .outer-frame {
-	position: fixed;
+	position: absolute;
 	top: 0; left: 0;
 	border: 10px solid black;
 	height: 100vh; width: 100vw;
 	opacity: .15;
-	z-index: -1;
+	z-index: 10;
+	pointer-events: none;
 }
 
 .inner-frame {
-	position: fixed;
+	position: absolute;
 	top: 0; left: 0;
-	border: 1px solid;
+	border: 1px solid #fff;
 	height: calc(100vh - 20px); width: calc(100vw - 20px);
 	margin: 10px;
 	opacity: .6;
-	z-index: -1;
-	&:after {
+	z-index: 10;
+	pointer-events: none;
+	
+	&:before, &:after {
 		position: absolute;
-		bottom: -8px; right: 0;
+		height: 52px;
+		width: 52px;
+		transform: scale(.5);
+		content: "";
 	}
+	&:before {
+		top: -13px; left: -13px;
+		background: url(img/corner-white_2x.png) top left no-repeat;
+	}
+	&:after {	
+		bottom: -13px; right: -13px;
+		background: url(img/corner-white2_2x.png) top left no-repeat;
+	}	
 }
 
 /* Black or white */
 // Options controlled with jQuery. Values set in WP back-end
-.inner-frame.white {
-	&:before {
-		content: url(img/corner-white.png) top left no-repeat;
-	}
-	&:after {
-		content: url(img/corner-white2.png) top left no-repeat;
-	}
-}
+// Fancy corners
 .inner-frame.black {
 	&:before {
-		content: url(img/corner-black.png) top left no-repeat;
+		background: url(img/corner-black_2x.png) top left no-repeat;
 	}
 	&:after {
-		content: url(img/corner-black2.png) top left no-repeat;
+		background: url(img/corner_black2_2x.png) top left no-repeat;
 	}
 }
 
+.post-frame.black {
+	border: 1px solid black;
+}
+
 .white {
-	color: white;
-	border-color: white;
+	color: #fff;
+	border-color: #fff;
 }
 .black {
 	color: #333;
-	border-color: black;
+	border-color: #000;
 }
+
+
+

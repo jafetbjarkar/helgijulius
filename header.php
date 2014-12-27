@@ -32,7 +32,7 @@
 	
 	<!-- div for bg frame and dark border -->
 	<div class="outer-frame"></div>
-	<div class="inner-frame white"></div>
+	<div class="inner-frame"></div>
 
 	<!-- add frame and fancy corners to this div -->
 	<div id="page" class="page frame">

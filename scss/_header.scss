@@ -1,0 +1,27 @@
+/**
+ * Header
+ * ----------------------------------------------------------------------------
+ */
+
+ /* Navigation */
+.nav-menu {
+	ul {
+		max-width: 400px;
+		position: fixed;
+		top: 0; right: 10px;
+		z-index: 9999;
+		li {
+			display: inline-block;
+			margin: 5px;
+			&:after {
+				content: "|";
+				margin: 0 0 0 12px;
+			}
+			&:last-child {
+				&:after {
+					content: "";
+				}
+			}
+		}
+	}
+}
