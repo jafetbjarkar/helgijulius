@@ -14,7 +14,7 @@ Text Domain: Helgi Júlíus theme
 /* Fonts*/
 
 /* Colors */
-//$default:			#333;
+$default:					#222;
 
 /* Link colors */
 
@@ -25,3 +25,5 @@ Text Domain: Helgi Júlíus theme
 @import 'content';
 @import 'icon_font';
 @import 'plugins';
+@import 'audio-player';
+@import 'bootstrap';

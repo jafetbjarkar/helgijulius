@@ -16,11 +16,12 @@
 	<!-- enable ACF -->
 	<!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/js/min/advanced-custom-fields-min.js"></script> -->
 	<!-- OWL Carousel slider -->
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/min/owl.carousel.min.js"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/owl.carousel.js"></script>
 	<!-- Tooltipster -->
 	<!--<script src="<?php //echo //get_stylesheet_directory_uri(); ?>/js/min/jquery.tooltipster.min.js"></script>-->
 	<!-- Extra scripts -->
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/extra.js"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.js"></script>
 	
 </body>
 </html>

@@ -16,12 +16,12 @@ get_header(); ?>
 				
 
 				<?php // Get category for current post ?>
-				<?php $category = get_the_category()[0]->slug; ?>
-				<?php if( $category == 'album' ) : ?>
-					<?php get_template_part( 'content', $category ); ?>
-				<?php else : // normal posts + format ?>
+				<?php //$category = get_the_category()[0]->slug; ?>
+				<?php //if( $category == 'album' ) : ?>
+					<?php //get_template_part( 'content', $category ); ?>
+				<?php //else : // normal posts + format ?>
 					<?php get_template_part( 'content' ); ?>
-				<?php endif; ?>	
+				<?php //endif; ?>	
 
 			<?php endwhile; ?>
 

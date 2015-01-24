@@ -1,0 +1,123 @@
+/**
+ * Audio Player
+ * ----------------------------------------------------------------------------
+ */
+
+$player-width: 400px;
+
+// SONG META
+.wp-playlist {
+	background: none !important;
+	border: none !important;
+	//width: 400px !important;
+	position: relative;
+	color: #fff;
+	span {
+		color: #fff;
+		display: inline;
+		&:nth-child(1) {
+			&:after {
+				margin: 0 10px;
+				content: " | ";
+				
+			}
+		}
+	}
+}
+.wp-playlist-current-item {
+	display: block !important;
+}
+.wp-playlist-caption {
+	
+	
+	//background-color: red;
+	max-width: inherit !important; // to owerride max-width: 88%;
+	text-align: center;
+	margin: 0 auto;
+}
+.wp-playlist-item-album {
+	font-style: normal !important;
+}
+.wp-playlist-item-artist {
+	display: none !important;
+}
+
+// THE AUDIO PLAYER
+// mejs is the player
+.mejs-container {
+	background: none !important;
+	width: $player-width !important;
+	display: block !important;
+	margin: 0 auto !important;
+	text-align: center !important;
+	position: relative !important;
+	height: inherit !important;
+	.mejs-inner {	
+	}
+	&:focus {
+		outline: 0 !important;
+	}
+}
+
+.mejs-controls {
+	background: none !important;
+	a {
+		height: 1px !important;
+		width: 300px !important;
+	}
+}
+.mejs-playpause-button {
+	position: absolute;
+	top: -19px; left: 200px;
+}
+.mejs-time-rail {
+	position: absolute;
+	top: 5px; left: 45px;
+}
+.mejs-time,
+.mejs-volume-button,
+.mejs-horizontal-volume-slider,
+.mejs-time, 
+.mejs-duration-container,
+.mejs-time-float-current,
+.mejs-time-float-corner,
+.mejs-offscreen,
+.mejs-time-handle,
+.mejs-time-float,
+.mejs-time-float-current {
+	display: none !important;
+	visibility: hidden !important;
+}
+.mejs-time-loaded,
+.mejs-time-buffering,
+.mejs-time-current {
+	height: 1px !important;
+}
+.mejs-time-current {
+	background-color: red !important;
+}
+
+// NEXT AND PREV BUTTONS
+.wp-playlist-next,
+.wp-playlist-prev {
+	height: 20px;
+	width: 20px;
+	//background-color: red;
+	position: absolute;
+	color: #fff;
+	font-size: 140%;
+}
+.wp-playlist-next {
+	top: 34px; left: calc(600px / 2 - 40px);
+	&:after {
+		@extend %icon;
+		content: $icon-first;
+	}
+}
+.wp-playlist-prev {
+	top: 34px; left: calc(600px / 2 + 40px);
+	&:after {
+		@extend %icon;
+		content: $icon-last;
+	}
+}

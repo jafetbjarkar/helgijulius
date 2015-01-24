@@ -246,52 +246,84 @@
 /* Styling Next and Prev buttons */
 
 .owl-theme .owl-controls .owl-buttons div{
-	color: #FFF;
+	//color: #FFF;
 	display: inline-block;
 	zoom: 1;
 	*display: inline;/*IE7 life-saver */
-	margin: 5px;
+	margin: 2px;
 	padding: 3px 10px;
 	font-size: 12px;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
-	border-radius: 30px;
-	background: #869791;
+	//border-radius: 30px;
+	//background: #869791;
 	filter: Alpha(Opacity=50);/*IE7 fix*/
-	opacity: 0.5;
+	opacity: 1;
+
+	position: fixed;
+	
 }
+
+
+
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
 .owl-theme .owl-controls.clickable .owl-buttons div:hover{
 	filter: Alpha(Opacity=100);/*IE7 fix*/
-	opacity: 1;
+	opacity: .5;
 	text-decoration: none;
 }
 
-/* Styling Pagination*/
+/* Next and previous custom styles for helgijulius theme */
+.owl-prev {
+	top: calc( 100vh / 2 ); left: -17px;
+	visibility: hidden;
+	&:after {
+		@extend %icon;
+		content: $icon-left;
+		font-size: 400%;
+		visibility: visible;
+	}
+}
+.owl-next {
+	top: calc( 100vh / 2 ); right: 10px;
+	visibility: hidden;
+	&:after {
+		@extend %icon;
+		content: $icon-right;
+		font-size: 400%;
+		visibility: visible;
+	}
+}
 
+/* Styling Pagination*/
 .owl-theme .owl-controls .owl-page{
 	display: inline-block;
 	zoom: 1;
 	*display: inline;/*IE7 life-saver */
 }
+.owl-theme .owl-controls .owl-page.active{
+	text-decoration: underline;
+}
+
 .owl-theme .owl-controls .owl-page span{
 	display: block;
 	width: 12px;
 	height: 12px;
-	margin: 5px 7px;
-	filter: Alpha(Opacity=50);/*IE7 fix*/
-	opacity: 0.5;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
-	background: #869791;
-}
-
-.owl-theme .owl-controls .owl-page.active span,
-.owl-theme .owl-controls.clickable .owl-page:hover span{
+	//margin: 5px 7px;
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1;
+	// -webkit-border-radius: 20px;
+	// -moz-border-radius: 20px;
+	//border-radius: 20px;
+	//background: #869791;
+}
+
+//.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span:after,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: .5 !important;
 }
 
 /* If PaginationNumbers is true */
@@ -300,11 +332,30 @@
 	height: auto;
 	width: auto;
 	color: #FFF;
-	padding: 2px 10px;
-	font-size: 12px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
+	padding: 0 10px 14px;
+	//font-size: 12px;
+	// -webkit-border-radius: 30px;
+	// -moz-border-radius: 30px;
+	// border-radius: 30px;
+	font-size: 120%;
+
+}
+
+/* Add home symbol to first number - helgijulius theme */
+.owl-pagination {
+	.owl-page:nth-child(1) {
+		visibility: hidden;
+		&:after {
+			@extend %icon;
+			content: $icon-house;
+			visibility: visible;
+			//opacity: 1;
+			font-size: 120%;
+		}
+		&:hover {
+			opacity: .5 !important;
+		}
+	}
 }
 
 /* preloading images */
@@ -312,3 +363,19 @@
 	min-height: 150px;
 	background: url(AjaxLoader.gif) no-repeat center center
 }
+
+/* Black and white - helgijulius theme */
+body.black {
+		.owl-numbers {
+		color: $default !important;
+	}
+}
+
+
+body.white .owl-controls {
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
+}
+
+body.black .owl-controls {
+	text-shadow: 1px 1px 2px rgba(255, 255, 255, .4);
+} 

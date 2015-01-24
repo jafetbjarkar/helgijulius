@@ -51,7 +51,8 @@ body.logged-in {
 /* Black or white */
 // Options controlled with jQuery. Values set in WP back-end
 // Fancy corners
-.inner-frame.black {
+body.black .inner-frame {
+	border-color: $default;
 	&:before {
 		background: url(img/corner-black_2x.png) top left no-repeat;
 	}
@@ -64,14 +65,16 @@ body.logged-in {
 	border: 1px solid black;
 }
 
-.white {
+body.white  {
 	color: #fff;
 	border-color: #fff;
 }
-.black {
-	color: #333;
+body.black {
+	color: $default;
 	border-color: #000;
 }
+
+
 
 
 
