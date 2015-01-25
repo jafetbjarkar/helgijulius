@@ -4,120 +4,177 @@
  */
 
 $player-width: 400px;
+$play-pause-size: 160%;
 
 // SONG META
-.wp-playlist {
-	background: none !important;
-	border: none !important;
-	//width: 400px !important;
-	position: relative;
-	color: #fff;
-	span {
+.category-home {
+	* {
+		transition: none;
+	}
+	.wp-playlist {
+		transform: scale(1.26, 1.26);
+		background: none !important;
+		border: none !important;
+		//width: 400px !important;
+		position: relative;
 		color: #fff;
-		display: inline;
-		&:nth-child(1) {
-			&:after {
-				margin: 0 10px;
-				content: " | ";
-				
+		width: $player-width;
+		margin: 20px auto;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+		span {
+			color: #fff;
+			display: inline;
+			&:nth-child(1) {
+				&:after {
+					margin: 0 10px;
+					content: " | ";
+					
+				}
 			}
 		}
 	}
-}
-.wp-playlist-current-item {
-	display: block !important;
-}
-.wp-playlist-caption {
-	
-	
-	//background-color: red;
-	max-width: inherit !important; // to owerride max-width: 88%;
-	text-align: center;
-	margin: 0 auto;
-}
-.wp-playlist-item-album {
-	font-style: normal !important;
-}
-.wp-playlist-item-artist {
-	display: none !important;
-}
-
-// THE AUDIO PLAYER
-// mejs is the player
-.mejs-container {
-	background: none !important;
-	width: $player-width !important;
-	display: block !important;
-	margin: 0 auto !important;
-	text-align: center !important;
-	position: relative !important;
-	height: inherit !important;
-	.mejs-inner {	
+	.wp-playlist-current-item {
+		display: block !important;
+		margin: 0 auto;
+		min-height: 66px;
 	}
-	&:focus {
-		outline: 0 !important;
+	.wp-playlist-caption {
+		
+		
+		//background-color: red;
+		max-width: inherit !important; // to owerride max-width: 88%;
+		text-align: center;
+		margin: 0 auto;
 	}
-}
+	.wp-playlist-item-album {
+		font-style: normal !important;
+	}
+	.wp-playlist-item-artist {
+		display: none !important;
+	}
 
-.mejs-controls {
-	background: none !important;
-	a {
+	// THE AUDIO PLAYER
+	// mejs is the player
+	.mejs-container {
+		background: none !important;
+		width: $player-width !important;
+		display: block !important;
+		margin: 0 auto !important;
+		text-align: center !important;
+		position: relative !important;
+		height: inherit !important;
+		.mejs-inner {	
+		}
+		&:focus {
+			outline: 0 !important;
+		}
+	}
+
+	.mejs-controls {
+		background: none !important;
+		left: -11px !important;
+		a {
+			background: none !important;
+			height: 10px !important;
+			width: 300px !important;
+			border-top: 1px solid rgba(255, 255, 255, .4);
+			border-radius: 0 !important;
+		}
+	}
+	.mejs-playpause-button {
+		position: absolute;
+		top: -19px; left: 200px;
+		padding-top: 6px !important;
+		&:hover {
+			opacity: .5;
+			cursor: pointer;
+		}
+		button {
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+			background: transparent !important;
+			
+		}
+		&.mejs-play {
+			&:after {
+				font-size: $play-pause-size;
+				@extend %icon;
+				content: $icon-play;
+			}
+		}
+		&.mejs-pause {
+			&:after {
+				font-size: $play-pause-size;
+				@extend %icon;
+				content: $icon-pause;
+			}
+		}
+	}
+	.mejs-time-rail {
+		position: absolute;
+		top: 5px; left: 45px;
+		//width: 400px !important;
+		margin: 0 auto;
+		a {
+			//width: 400px !important;
+			&:focus {
+				outline: none !important;
+			}
+		}
+	}
+	.mejs-time,
+	.mejs-volume-button,
+	.mejs-horizontal-volume-slider,
+	.mejs-time, 
+	.mejs-duration-container,
+	.mejs-time-float-current,
+	.mejs-time-float-corner,
+	.mejs-offscreen,
+	.mejs-time-handle,
+	.mejs-time-float,
+	.mejs-time-float-current {
+		display: none !important;
+		visibility: hidden !important;
+	}
+	.mejs-time-loaded,
+	.mejs-time-buffering {
 		height: 1px !important;
-		width: 300px !important;
+		display: none !important;
 	}
-}
-.mejs-playpause-button {
-	position: absolute;
-	top: -19px; left: 200px;
-}
-.mejs-time-rail {
-	position: absolute;
-	top: 5px; left: 45px;
-}
-.mejs-time,
-.mejs-volume-button,
-.mejs-horizontal-volume-slider,
-.mejs-time, 
-.mejs-duration-container,
-.mejs-time-float-current,
-.mejs-time-float-corner,
-.mejs-offscreen,
-.mejs-time-handle,
-.mejs-time-float,
-.mejs-time-float-current {
-	display: none !important;
-	visibility: hidden !important;
-}
-.mejs-time-loaded,
-.mejs-time-buffering,
-.mejs-time-current {
-	height: 1px !important;
-}
-.mejs-time-current {
-	background-color: red !important;
-}
+	.mejs-time-current {
+		height: 1px !important;
+		background-color: #fff !important;
+		position: relative;
+		top: -1px;
+	}
 
-// NEXT AND PREV BUTTONS
-.wp-playlist-next,
-.wp-playlist-prev {
-	height: 20px;
-	width: 20px;
-	//background-color: red;
-	position: absolute;
-	color: #fff;
-	font-size: 140%;
-}
-.wp-playlist-next {
-	top: 34px; left: calc(600px / 2 - 40px);
-	&:after {
-		@extend %icon;
-		content: $icon-first;
+	// NEXT AND PREV BUTTONS
+	.wp-playlist-next,
+	.wp-playlist-prev {
+		height: 20px;
+		width: 20px;
+		//background-color: red;
+		position: relative;
+		color: #fff;
+		font-size: 140%;
+		&:hover {
+			opacity: .5;
+			cursor: pointer;
+		}
 	}
-}
-.wp-playlist-prev {
-	top: 34px; left: calc(600px / 2 + 40px);
-	&:after {
-		@extend %icon;
-		content: $icon-last;
+	.wp-playlist-next {
+		top: -45px; 
+		left: calc(400px / 2 + 31px);
+		&:after {
+			@extend %icon;
+			content: $icon-last;
+		}
+	}
+	.wp-playlist-prev {
+		top: -65px; 
+		left: calc(400px / 2 - 49px);
+		&:after {
+			@extend %icon;
+			content: $icon-first;
+		}
 	}
 }

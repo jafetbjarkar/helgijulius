@@ -19,11 +19,13 @@ $default:					#222;
 /* Link colors */
 
 /* Imports */
+@import 'icon_font';
 @import 'reset';
 @import 'basic_structure';
 @import 'header';
 @import 'content';
-@import 'icon_font';
+@import 'footer';
 @import 'plugins';
 @import 'audio-player';
-@import 'bootstrap';
+@import 'colors-effects';
+//@import 'bootstrap';

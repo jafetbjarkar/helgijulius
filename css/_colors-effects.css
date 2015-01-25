@@ -1,0 +1,7 @@
+/**
+ * Reset
+ * ----------------------------------------------------------------------------
+ */
+a, span, p, div,
+h1, h2, h3 {
+  transition: color .6s ease-in-out, background-color 2s ease-in-out; }

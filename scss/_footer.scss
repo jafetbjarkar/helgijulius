@@ -1,0 +1,40 @@
+/**
+ * Footer
+ * ----------------------------------------------------------------------------
+ */
+
+.sharing-btns {
+  position: fixed;
+  bottom: 18px;
+  right: 24px;
+  
+  div {
+    float: left;
+    margin-right: 10px;
+
+    a:hover {
+      text-decoration: none;
+      opacity: .5
+    }
+  }
+
+  .twitter {
+    a {
+      &:after {
+        font-size: 150%;
+        @extend %icon;
+        content: $icon-t;
+      }
+    }
+  }
+
+  .facebook {
+    a {
+      &:after {
+        font-size: 150%;
+        @extend %icon;
+        content: $icon-f;
+      }
+    }
+  }
+}
