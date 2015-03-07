@@ -45,8 +45,8 @@ article {
 }
 
 
-// -- .category-home -- //
-.category-home {
+// -- .category-player -- //
+.category-player {
   width: 490px;
   margin-top: calc(100vh / 2 - 160px);
 }
@@ -125,4 +125,12 @@ article.category-album {
      @extend %icon;
      content: $icon-cross;
    }
+}
+
+
+// - PAGES
+.page .hentry {
+  width: 80%;
+  max-width: 960px;
+
 }

@@ -25,7 +25,7 @@ Text Domain: Helgi Júlíus theme
   src: url("fonts/icomoon.eot?#iefix-iq5rrk") format("embedded-opentype"), url("fonts/icomoon.woff?-iq5rrk") format("woff"), url("fonts/icomoon.ttf?-iq5rrk") format("truetype"), url("fonts/icomoon.svg?-iq5rrk#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
-.album-controls:after, .sharing-btns .twitter a:after, .sharing-btns .facebook a:after, .owl-prev:after, .owl-next:after, .owl-pagination .owl-page:nth-child(1):after, .category-home .mejs-playpause-button.mejs-play:after, .category-home .mejs-playpause-button.mejs-pause:after, .category-home .wp-playlist-next:after, .category-home .wp-playlist-prev:after {
+.album-controls:after, .sharing-btns .twitter a:after, .sharing-btns .facebook a:after, .owl-prev:after, .owl-next:after, .owl-pagination .owl-page:nth-child(1):after, .category-player .mejs-playpause-button.mejs-play:after, .category-player .mejs-playpause-button.mejs-pause:after, .category-player .wp-playlist-next:after, .category-player .wp-playlist-prev:after {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -472,19 +472,19 @@ body.black {
  * ----------------------------------------------------------------------------
  */
 /* Navigation */
-.nav-menu ul {
+.nav-menu {
   max-width: 400px;
   position: fixed;
   top: 0;
   right: 10px;
   z-index: 9999; }
-  .nav-menu ul li {
+  .nav-menu li {
     display: inline-block;
     margin: 5px; }
-    .nav-menu ul li:after {
+    .nav-menu li:after {
       content: "|";
       margin: 0 0 0 12px; }
-    .nav-menu ul li:last-child:after {
+    .nav-menu li:last-child:after {
       content: ""; }
 
 /**
@@ -522,7 +522,7 @@ article {
   position: fixed;
   width: 300px; }
 
-.category-home {
+.category-player {
   width: 490px;
   margin-top: calc(100vh / 2 - 160px); }
 
@@ -566,6 +566,10 @@ article.category-album {
   font-size: 240%; }
   .album-controls:after {
     content: "x"; }
+
+.page .hentry {
+  width: 80%;
+  max-width: 960px; }
 
 /**
  * Footer
@@ -968,9 +972,9 @@ body.black .owl-controls {
  * Audio Player
  * ----------------------------------------------------------------------------
  */
-.category-home * {
+.category-player * {
   transition: none; }
-.category-home .wp-playlist {
+.category-player .wp-playlist {
   transform: scale(1.26, 1.26);
   background: none !important;
   border: none !important;
@@ -979,25 +983,25 @@ body.black .owl-controls {
   width: 400px;
   margin: 20px auto;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
-  .category-home .wp-playlist span {
+  .category-player .wp-playlist span {
     color: #fff;
     display: inline; }
-    .category-home .wp-playlist span:nth-child(1):after {
+    .category-player .wp-playlist span:nth-child(1):after {
       margin: 0 10px;
       content: " | "; }
-.category-home .wp-playlist-current-item {
+.category-player .wp-playlist-current-item {
   display: block !important;
   margin: 0 auto;
   min-height: 66px; }
-.category-home .wp-playlist-caption {
+.category-player .wp-playlist-caption {
   max-width: inherit !important;
   text-align: center;
   margin: 0 auto; }
-.category-home .wp-playlist-item-album {
+.category-player .wp-playlist-item-album {
   font-style: normal !important; }
-.category-home .wp-playlist-item-artist {
+.category-player .wp-playlist-item-artist {
   display: none !important; }
-.category-home .mejs-container {
+.category-player .mejs-container {
   background: none !important;
   width: 400px !important;
   display: block !important;
@@ -1005,83 +1009,83 @@ body.black .owl-controls {
   text-align: center !important;
   position: relative !important;
   height: inherit !important; }
-  .category-home .mejs-container:focus {
+  .category-player .mejs-container:focus {
     outline: 0 !important; }
-.category-home .mejs-controls {
+.category-player .mejs-controls {
   background: none !important;
   left: -11px !important; }
-  .category-home .mejs-controls a {
+  .category-player .mejs-controls a {
     background: none !important;
     height: 10px !important;
     width: 300px !important;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 0 !important; }
-.category-home .mejs-playpause-button {
+.category-player .mejs-playpause-button {
   position: absolute;
   top: -19px;
   left: 200px;
   padding-top: 6px !important; }
-  .category-home .mejs-playpause-button:hover {
+  .category-player .mejs-playpause-button:hover {
     opacity: .5;
     cursor: pointer; }
-  .category-home .mejs-playpause-button button {
+  .category-player .mejs-playpause-button button {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     background: transparent !important; }
-  .category-home .mejs-playpause-button.mejs-play:after {
+  .category-player .mejs-playpause-button.mejs-play:after {
     font-size: 160%;
     content: "1"; }
-  .category-home .mejs-playpause-button.mejs-pause:after {
+  .category-player .mejs-playpause-button.mejs-pause:after {
     font-size: 160%;
     content: "2"; }
-.category-home .mejs-time-rail {
+.category-player .mejs-time-rail {
   position: absolute;
   top: 5px;
   left: 45px;
   margin: 0 auto; }
-  .category-home .mejs-time-rail a:focus {
+  .category-player .mejs-time-rail a:focus {
     outline: none !important; }
-.category-home .mejs-time,
-.category-home .mejs-volume-button,
-.category-home .mejs-horizontal-volume-slider,
-.category-home .mejs-time,
-.category-home .mejs-duration-container,
-.category-home .mejs-time-float-current,
-.category-home .mejs-time-float-corner,
-.category-home .mejs-offscreen,
-.category-home .mejs-time-handle,
-.category-home .mejs-time-float,
-.category-home .mejs-time-float-current {
+.category-player .mejs-time,
+.category-player .mejs-volume-button,
+.category-player .mejs-horizontal-volume-slider,
+.category-player .mejs-time,
+.category-player .mejs-duration-container,
+.category-player .mejs-time-float-current,
+.category-player .mejs-time-float-corner,
+.category-player .mejs-offscreen,
+.category-player .mejs-time-handle,
+.category-player .mejs-time-float,
+.category-player .mejs-time-float-current {
   display: none !important;
   visibility: hidden !important; }
-.category-home .mejs-time-loaded,
-.category-home .mejs-time-buffering {
+.category-player .mejs-time-loaded,
+.category-player .mejs-time-buffering {
   height: 1px !important;
   display: none !important; }
-.category-home .mejs-time-current {
+.category-player .mejs-time-current {
   height: 1px !important;
   background-color: #fff !important;
   position: relative;
   top: -1px; }
-.category-home .wp-playlist-next,
-.category-home .wp-playlist-prev {
+.category-player .wp-playlist-next,
+.category-player .wp-playlist-prev {
   height: 20px;
   width: 20px;
   position: relative;
   color: #fff;
   font-size: 140%; }
-  .category-home .wp-playlist-next:hover,
-  .category-home .wp-playlist-prev:hover {
+  .category-player .wp-playlist-next:hover,
+  .category-player .wp-playlist-prev:hover {
     opacity: .5;
     cursor: pointer; }
-.category-home .wp-playlist-next {
+.category-player .wp-playlist-next {
   top: -45px;
   left: calc(400px / 2 + 31px); }
-  .category-home .wp-playlist-next:after {
+  .category-player .wp-playlist-next:after {
     content: "5"; }
-.category-home .wp-playlist-prev {
+.category-player .wp-playlist-prev {
   top: -65px;
   left: calc(400px / 2 - 49px); }
-  .category-home .wp-playlist-prev:after {
+  .category-player .wp-playlist-prev:after {
     content: "4"; }
 
 /**

@@ -3,6 +3,8 @@
  * @package WordPress
  * @subpackage HelgiJulius.com
  * @since HelgiJulius.com 1.0
+ *
+ * All pages, default content
  */
 ?>
 
@@ -22,7 +24,6 @@
 			<?php the_field('playlist'); ?>
 			<?php the_content(); ?>
 		</div><!-- .entry-content -->
-
 
 		<footer class="entry-meta-comments">
 		</footer><!-- .entry-meta -->
