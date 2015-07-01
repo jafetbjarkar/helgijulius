@@ -983,10 +983,10 @@ body.black .owl-controls {
   width: 400px;
   margin: 20px auto;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
-  .category-player .wp-playlist span {
+  .category-player .wp-playlist .wp-playlist-caption span {
     color: #fff;
     display: inline; }
-    .category-player .wp-playlist span:nth-child(1):after {
+    .category-player .wp-playlist .wp-playlist-caption span:nth-child(1):after {
       margin: 0 10px;
       content: " | "; }
 .category-player .wp-playlist-current-item {
@@ -1040,10 +1040,17 @@ body.black .owl-controls {
 .category-player .mejs-time-rail {
   position: absolute;
   top: 5px;
-  left: 45px;
   margin: 0 auto; }
   .category-player .mejs-time-rail a:focus {
     outline: none !important; }
+  .category-player .mejs-time-rail .mejs-time-total {
+    background-color: transparent !important;
+    border-top: solid rgba(255, 255, 255, 0.2) 2px; }
+    .category-player .mejs-time-rail .mejs-time-total:focus {
+      outline: 0 !important; }
+  .category-player .mejs-time-rail .mejs-time-current {
+    top: -2px;
+    height: 2px !important; }
 .category-player .mejs-time,
 .category-player .mejs-volume-button,
 .category-player .mejs-horizontal-volume-slider,
